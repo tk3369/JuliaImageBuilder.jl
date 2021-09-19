@@ -1,5 +1,7 @@
 module JuliaImageBuilder
 
+export build
+
 using Pkg
 using PackageCompiler
 

@@ -7,7 +7,7 @@ This is a convenient package for building Julia system images using PackageCompi
 ```julia
 using JuliaImageBuilder
 build("julia-formatter")
-build("julia-plot")
+build("julia-plots")
 ```
 
 System images are saved at `~/.julia/images/[julia-version]` directory.

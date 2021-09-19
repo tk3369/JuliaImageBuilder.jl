@@ -1,11 +1,11 @@
-# JuliaImageMaker
+# JuliaImageBuilder
 
 This is a convenient package for building Julia system images using PackageCompiler.jl.
 
 # How to use?
 
 ```julia
-using JuliaImageMaker
+using JuliaImageBuilder
 build("julia-formatter")
 build("julia-plot")
 ```

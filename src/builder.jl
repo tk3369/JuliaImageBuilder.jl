@@ -65,7 +65,7 @@ function build(c::SysImageConfig)
         @info "files" precompile_files
         return make_sysimage(c, output_file, precompile_files)
     finally
-        # deactivate_build_directory()
+        deactivate_build_directory()
     end
 end
 

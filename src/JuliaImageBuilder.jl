@@ -1,8 +1,7 @@
-module JuliaImageMaker
+module JuliaImageBuilder
 
 using Pkg
 using PackageCompiler
-using JuliaFormatter
 
 include("type.jl")
 include("config.jl")

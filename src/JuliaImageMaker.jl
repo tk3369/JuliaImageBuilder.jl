@@ -1,5 +1,11 @@
 module JuliaImageMaker
 
-# Write your package code here.
+using Pkg
+using PackageCompiler
+using JuliaFormatter
+
+include("type.jl")
+include("config.jl")
+include("builder.jl")
 
 end

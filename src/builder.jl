@@ -6,9 +6,7 @@ end
 
 function output_dir()
     dir = joinpath(DEPOT_PATH[1], "images", string(VERSION))
-    if !isdir(dir)
-        mkpath(dir) || error("Unable to create output directory: $dir")
-    end
+    mkpath(dir)  # ensure path exists
     return dir
 end
 

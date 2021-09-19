@@ -18,14 +18,8 @@ function activate_build_directory(c::SysImageConfig)
     return build_dir
 end
 
-function load_dependencies(c::SysImageConfig)
-    for dep in c.dependencies
-        @eval import $(dep.package)
-    end
-end
-
 function Base.pathof(dep::Dependency)
-    return pathof(eval(dep.package))
+    return Base.locate_package(Base.PkgId(String(dep.package)))
 end
 
 function deactivate_build_directory()
@@ -67,7 +61,6 @@ function build(c::SysImageConfig)
     output_file = joinpath(output_dir(), "$(c.name).so")
     try
         activate_build_directory(c)
-        load_dependencies(c)
         precompile_files = find_precompile_files(c)
         @info "files" precompile_files
         return make_sysimage(c, output_file, precompile_files)
